@@ -20,30 +20,30 @@ void setup(){
     ///  START OF SMILEY///////////////////////////
     /* SMILEY FACE - https://www.pixilart.com/draw/8x8-fd09fdff3db2b99
     yellow black
-    fff200 00000
-    fff200,fff200,fff200,fff200,fff200,fff200,fff200,fff200
-    fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
-    fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
-    fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
+   fff200 00000
+   fff200,fff200,fff200,fff200,fff200,fff200,fff200,fff200
+   fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
+   fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
+   fff200,fff200,000000,fff200,fff200,000000,fff200,fff200
     000000,fff200,fff200,fff200,fff200,fff200,fff200,000000
     000000,000000,fff200,fff200,fff200,fff200,000000,000000
-    fff200,000000,000000,fff200,fff200,000000,000000,fff200
-    fff200,fff200,000000,000000,000000,000000,fff200,fff200
+   fff200,000000,000000,fff200,fff200,000000,000000,fff200
+   fff200,fff200,000000,000000,000000,000000,fff200,fff200
     */
-    smileString = "fff200,fff200,fff200,fff200,fff200,fff200,fff200,fff200,fff200,fff200,000000,fff200,fff200,000000,fff200,fff200,fff200,fff200,000000,fff200,fff200,000000,fff200,fff200,fff200,fff200,000000,fff200,fff200,000000,fff200,fff200,000000,fff200,fff200,fff200,fff200,fff200,fff200,000000,000000,000000,fff200,fff200,fff200,fff200,000000,000000,fff200,000000,000000,fff200,fff200,000000,000000,fff200,fff200,fff200,000000,000000,000000,000000,fff200,fff200";
+    smileString = "000000,000000,fcacb9,ffa3b1,000000,000000,000000,000000,ffa3b1,fcacb9,000000,fcacb9,ffc2cc,ffc2cc,ffa3b1,f78d9f,f78d9f,ffa3b1,ffc2cc,ffc2cc,fcacb9,ffa3b1,ffc2cc,464646,ffc2cc,ffc2cc,ffc2cc,ff78d9f,464646,fcacb9,ffa3b1,000000,ffa3b1,ffc2cc,ffc2cc,f57f95,ff8d9f,ffc2cc,ffc2cc,000000,ffa3b1,ffc2cc,ffffff,99d9ea,ffc2cc,ffc2cc,ffffff,99d9ea,ffc2cc,fcacb9,fcacb9,ffc2cc,00b7ef,14c0f5,ffc2cc,ffc2cc,00b7ef,14c0f5,ffc2cc,ffa3b1,f78d9f,ffc2cc,ffc2cc,ffc2cc,ffc2cc,f78d9f,f57f95,ffc2cc,ffc2cc,f78d9f,000000,ffa3b1,ffc2cc,ffc2cc,ffc2cc,ffc2cc,ffc2cc,ffc2cc,ffa3b1,000000,ffa3b1,ffc2cc,ffc2cc,ffc2cc,ffa3b1,ffa3b1,ffc2cc,ffc2cc,ffc2cc,ffa3b1,fcacb9,ffa3b1,f78d9f,f57f95,000000,000000,f57f95,f78d9f,ffa3b1,fcacb9";
     smileList = new ArrayList<>(Arrays.asList(smileString.split(",")));//create an array from a string using the comma (,) to separate it
 
 
-    SmileyImage = new PImage(8, 8); //create an empty image
+    SmileyImage = new PImage(10, 10); //create an empty image
     SmileyImage.loadPixels(); //load the pixels from an image
     
-    for(int i = 0;i< 64;i++){
+    for(int i = 0;i< 100;i++){
         String pixelcolorSmile = smileList.get(i); //read the colors one by one from the Array created from the smileString 
         // println(i+ " " + pixelcolor);
         SmileyImage.pixels[i] = unhex(pixelcolorSmile);//convert the hexadecimal string into an RGB color usable by processing
     }  
     SmileyImage.updatePixels();//update (save) the new color data in the image
-    image(SmileyImage, 50, 20, 64,64);//draw the image onto the screen at location (50,20) and scaled up to 64 bits x 64 bits
+    image(SmileyImage, 50, 20, 100, 100);//draw the image onto the screen at location (50,20) and scaled up to 64 bits x 64 bits
     ///  END OF SMILEY///////////////////////////
     
     ///  START OF CARTMAN///////////////////////////
@@ -54,7 +54,7 @@ void setup(){
     9c5a3c,9c5a3c,FFFFFF,000000,FFFFFF,000000,e5aa7a,00b7ef
     9c5a3c,9c5a3c,FFFFFF,FFFFFF,FFFFFF,FFFFFF,e5aa7a,00b7ef
     990030,9c5a3c,9c5a3c,00b7ef,00b7ef,00b7ef,00b7ef,ed1c24
-    ff7e00,990030,ed1c24,ed1c24,ed1c24,ed1c24,ed1c24,fff200
+   ff7e00,990030,ed1c24,ed1c24,ed1c24,ed1c24,ed1c24,fff200
     000000,990030,990030,990030,990030,990030,990030,000000
     */
     cartmanString = "000000,000000,00b7ef,fff200,fff200,00b7ef,000000,000000,000000,4d6df3,00b7ef,00b7ef,00b7ef,00b7ef,00b7ef,000000,4d6df3,9c5a3c,FFFFFF,FFFFFF,FFFFFF,FFFFFF,e5aa7a,00b7ef,9c5a3c,9c5a3c,FFFFFF,000000,FFFFFF,000000,e5aa7a,00b7ef,9c5a3c,9c5a3c,FFFFFF,FFFFFF,FFFFFF,FFFFFF,e5aa7a,00b7ef,990030,9c5a3c,9c5a3c,00b7ef,00b7ef,00b7ef,00b7ef,ed1c24,ff7e00,990030,ed1c24,ed1c24,ed1c24,ed1c24,ed1c24,fff200,000000,990030,990030,990030,990030,990030,990030,000000";
@@ -76,7 +76,7 @@ void setup(){
 
     /* KENNY - https://www.pixilart.com/art/kenny-sr24293518485aws3
     orange black  brown  white
-    d16630 000000 78362a ffffff
+    d16630 000000 78362affffff
     000000,000000,d16630,d16630,d16630,d16630,000000,000000
     000000,d16630,78362a,78362a,78362a,78362a,d16630,000000
     000000,78362a,ffffff,ffffff,ffffff,ffffff,78362a,000000
@@ -221,4 +221,3 @@ void renderWave() {
         ellipse(x*xspacing, height/2+yvalues[x], 16, 16);
     }
 }
-
